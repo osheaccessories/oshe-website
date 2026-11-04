@@ -6,7 +6,7 @@
 
 # ── 阶段 1（当前）：主站 osheaccessories.com
 #    如需 oshezipper.com 暂时跳到主站，启用下面这段
-# https://oshezipper.com/*  https://osheaccessories.com/:splat  301!
+https://oshezipper.com/*  https://osheaccessories.com/:splat  301!
 
 # ── 阶段 2（将来）：主站 oshezipper.com
 #    把上面那段注释掉，启用下面这段，即可让旧域名全站 301 到新域名
