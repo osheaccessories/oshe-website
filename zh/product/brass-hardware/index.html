@@ -10,6 +10,7 @@
 <link rel="alternate" hreflang="zh-CN" href="https://osheaccessories.com/zh/product/brass-hardware/">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="stylesheet" href="/assets/zh.css">
+<meta name="web3forms-verify" content="622fb2ca-f8a6-48c6-940f-2927be959635">
 </head>
 <body>
 
@@ -49,19 +50,19 @@
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow">箱包五金</span>
-    <h1>实心黄铜箱包五金</h1>
-    <p class="lead">针扣、方扣、D型环、勾扣、铆钉、调节扣，实心黄铜材质。可镀镍、镀古铜、镀黑，可激光打标或压印品牌logo。</p>
+    <h1>铜质箱包五金</h1>
+    <p class="lead">采用实心黄铜，涵盖针扣、方扣、D型环、勾扣、铆钉、调节扣等常用款。表面可镀镍、古铜、哑黑等多种颜色，支持激光打标或压印logo。</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container two-col">
     <div>
-      <h2>为什么用黄铜</h2>
-      <p>黄铜是会变好的那种材料。锌合金用久了会起泡、脱皮、露底，实心黄铜则会自然起包浆，结构强度一直都在。一只包如果打算用几年而不是一季，这是更实在的选择。</p>
-      <p>我们在自己车间做机加工和后道，电镀层厚度和边缘处理是自己控的，不是买来的半成品。如果您手上的五金三个月就发暗，通常是电镀的问题——这也是我们拿到客户旧样时第一个检查的地方。</p>
+      <h2>为什么选铜质五金</h2>
+      <p>锌合金五金用久了容易起泡、脱皮、露底；实心黄铜则越用越有质感，强度始终稳定。如果您的包定位于中高端、要用几年，铜五金是更划算的选择。</p>
+      <p>机加工和后道处理都在自己车间完成，镀层厚度、边缘处理都由我们把控，不是外购半成品。如果您手上的五金用几个月就发暗，多半是电镀出了问题——这也是我们分析客户旧样时首先检查的地方。</p>
 
-      <h2 style="margin-top:32px;">这个品类的常见件</h2>
+      <h2 style="margin-top:32px;">可定制的五金类型</h2>
       <ul class="ticks">
         <li>针扣、方扣、日字扣、梯形扣、插扣</li>
         <li>D型环、O型环，焊接或开口</li>
@@ -75,7 +76,7 @@
       <div class="tag-row">
         <span>本色</span><span>古铜</span><span>亮镍</span><span>古银</span><span>哑黑</span><span>枪色</span><span>镀金</span><span>玫瑰金</span>
       </div>
-      <p style="margin-top:20px;font-size:13.5px;color:var(--muted);">可按潘通色号调色，同一表面处理 2000 件起。</p>
+      <p style="margin-top:20px;font-size:13.5px;color:var(--muted);">支持按潘通色号调色，同一种表面处理2000件起订。</p>
     </div>
 
     <aside>
@@ -102,17 +103,32 @@
     <span class="eyebrow">询价</span>
     <h2 style="margin-bottom:14px;">索取铜五金报价</h2>
     <p class="lead" style="margin-bottom:32px;">发一张照片或图纸，写明尺寸和数量。一个工作日内回复。</p>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-          onsubmit="event.preventDefault();alert('演示版本 — 请将 YOUR_FORM_ID 替换为您的 Formspree 表单 ID。');">
-      <input type="hidden" name="category" value="箱包五金 — 铜">
+      <div class="form-ok" id="formOk" hidden><span><b>询价已提交，谢谢！</b> 我们会在工作时间内 12 小时回复您。如有急事，可直接致电 180 0275 8559。</span></div>
+      <div class="form-err" id="formErr" hidden><span><b>提交失败。</b> 请重试，或直接把需求发到 sales@osheaccessories.com。</span></div>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="622fb2ca-f8a6-48c6-940f-2927be959635">
+        <input type="hidden" name="subject" value="网站询盘 — 中文站 / 铜五金">
+        <input type="hidden" name="from_name" value="Oshe Website">
+        <input type="hidden" name="redirect_to" value="https://osheaccessories.com/zh/product/brass-hardware/?sent=1#enquiry">
+        <input type="hidden" name="category" value="箱包五金 — 铜">
       <div class="field-row">
         <div class="field"><label>您的称呼 *</label><input type="text" name="name" required></div>
         <div class="field"><label>手机 / 微信 *</label><input type="text" name="phone" required></div>
       </div>
       <div class="field"><label>需求说明 *</label><textarea name="message" required placeholder="例如：25mm 方扣，古铜色，激光打标，3000 件。"></textarea></div>
-      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
       <button type="submit" class="btn">提交询价</button>
     </form>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  var ok = document.getElementById('formOk'), er = document.getElementById('formErr');
+  var f = document.querySelector('form[action*="web3forms"]');
+  if (p.get('sent') === '1' && ok && f) { ok.hidden = false; f.insertBefore(ok, f.firstChild); ok.scrollIntoView({block:'center',behavior:'smooth'}); }
+  if (p.get('sent') === '0' && er && f) { er.hidden = false; f.insertBefore(er, f.firstChild); er.scrollIntoView({block:'center',behavior:'smooth'}); }
+})();
+</script>
+
   </div>
 </section>
 

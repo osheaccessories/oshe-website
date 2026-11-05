@@ -31,6 +31,7 @@
   "description": "Manufacturer of bag hardware in brass and stainless steel, and 316 stainless steel zippers, for brands and bag factories worldwide."
 }
 </script>
+<meta name="web3forms-verify" content="622fb2ca-f8a6-48c6-940f-2927be959635">
 </head>
 <body>
 
@@ -451,9 +452,13 @@
         </div>
       </div>
 
-      <!-- Formspree: replace YOUR_FORM_ID with your form id, and delete the onsubmit attribute -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-            onsubmit="event.preventDefault();alert('Demo only — replace YOUR_FORM_ID with your Formspree ID.');">
+      <div class="form-ok" id="formOk" hidden><span><b>Thank you — your enquiry has been sent.</b> We reply within 12 hours on working days. If it is urgent, email sales@osheaccessories.com.</span></div>
+      <div class="form-err" id="formErr" hidden><span><b>Something went wrong.</b> Please try again, or email us directly at sales@osheaccessories.com.</span></div>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="622fb2ca-f8a6-48c6-940f-2927be959635">
+        <input type="hidden" name="subject" value="Oshe website — homepage / Request a quote">
+        <input type="hidden" name="from_name" value="Oshe Website">
+        <input type="hidden" name="redirect_to" value="https://osheaccessories.com/?sent=1#contact">
         <div class="field-row">
           <div class="field"><label>Name *</label><input type="text" name="name" required></div>
           <div class="field"><label>Company</label><input type="text" name="company"></div>
@@ -486,10 +491,19 @@
           <label>Requirements *</label>
           <textarea name="message" placeholder="e.g. #8 open-end 316L zipper, 70 cm, black slider with laser logo, 5,000 pcs. Sample needed before bulk." required></textarea>
         </div>
-        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
         <button type="submit" class="btn">Send enquiry</button>
         <p class="form-note">Your details are used only to answer this enquiry. Product documents available on request.</p>
       </form>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  var ok = document.getElementById('formOk'), er = document.getElementById('formErr');
+  var f = document.querySelector('form[action*="web3forms"]');
+  if (p.get('sent') === '1' && ok && f) { ok.hidden = false; f.insertBefore(ok, f.firstChild); ok.scrollIntoView({block:'center',behavior:'smooth'}); }
+  if (p.get('sent') === '0' && er && f) { er.hidden = false; f.insertBefore(er, f.firstChild); er.scrollIntoView({block:'center',behavior:'smooth'}); }
+})();
+</script>
     </div>
   </div>
 </section>

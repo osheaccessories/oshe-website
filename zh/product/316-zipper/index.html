@@ -21,6 +21,7 @@
   "manufacturer": { "@type": "Organization", "name": "欧奢（东莞）五金有限公司" }
 }
 </script>
+<meta name="web3forms-verify" content="622fb2ca-f8a6-48c6-940f-2927be959635">
 </head>
 <body>
 
@@ -60,8 +61,8 @@
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow">拉链</span>
-    <h1>316L 不锈钢拉链</h1>
-    <p class="lead">船罩、潜水服、户外装备，以及任何盐和潮气会把普通拉链毁掉的地方。3号至10号，长度可定制到5米，可按批次做盐雾测试。</p>
+    <h1>316不锈钢拉链</h1>
+    <p class="lead">专为船罩、潜水装备、户外用品等高腐蚀环境设计。3号至10号齐全，长度可定制至5米，耐盐雾、拉动顺滑不卡涩。</p>
   </div>
 </section>
 
@@ -69,8 +70,8 @@
   <div class="container two-col">
     <div>
       <h2>普通拉链的问题出在哪</h2>
-      <p>现场失效的拉链，多数不是机械问题，是腐蚀。船罩上用镀镍或铜拉链，通常一个航季之内就开始发涩——齿咬住、拉头卡死，最后客户怪的是罩子，不是拉链。</p>
-      <p>316L 不锈钢——和手术器械、船用配件同一个牌号——把这条失效路径去掉了。合金里的钼抗氯离子侵蚀，所以齿在几年暴露之后还能拉动，而不是几个月。</p>
+      <p>户外拉链出问题，多数不是拉坏了，而是锈住了。船罩如果用镀镍或铜拉链，往往一个航季就开始发涩——链齿咬合、拉头卡死，客户投诉的却是罩子本身。</p>
+      <p>316不锈钢与手术器械、船用配件同级，合金中的钼元素能有效抵抗盐雾侵蚀。同样的使用环境，普通拉链几个月就卡死，316拉链用几年依然顺滑。</p>
 
       <h2 style="margin-top:32px;">用在哪里</h2>
       <ul class="ticks">
@@ -83,7 +84,7 @@
       </ul>
 
       <h2 style="margin-top:32px;">定制范围</h2>
-      <p>号数、链条长度、拉头类型、拉片形状、布带颜色、激光打标，都可以按单指定。如果您不确定用哪个号数，把开口尺寸和承重告诉我们——我们告诉您该用几号，而不是让您选大了浪费、选小了不够用。</p>
+      <p>号数、长度、拉头类型、拉片形状、布带颜色、激光打标，均可按需定制。不确定用几号？把开口尺寸和承重发给我们，我们帮您选，不浪费也不将就。</p>
       <div class="tag-row">
         <span>3号</span><span>5号</span><span>8号</span><span>10号</span><span>闭尾</span><span>开尾</span><span>双开</span><span>可定制长度</span>
       </div>
@@ -116,17 +117,32 @@
     <span class="eyebrow">询价</span>
     <h2 style="margin-bottom:14px;">索取 316 拉链报价</h2>
     <p class="lead" style="margin-bottom:32px;">告诉我们号数、长度、拉头类型和数量。如果您手上有现在用的样品，拍张照片，我们照着对。</p>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-          onsubmit="event.preventDefault();alert('演示版本 — 请将 YOUR_FORM_ID 替换为您的 Formspree 表单 ID。');">
-      <input type="hidden" name="category" value="316不锈钢拉链">
+      <div class="form-ok" id="formOk" hidden><span><b>询价已提交，谢谢！</b> 我们会在工作时间内 12 小时回复您。如有急事，可直接致电 180 0275 8559。</span></div>
+      <div class="form-err" id="formErr" hidden><span><b>提交失败。</b> 请重试，或直接把需求发到 sales@osheaccessories.com。</span></div>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="622fb2ca-f8a6-48c6-940f-2927be959635">
+        <input type="hidden" name="subject" value="网站询盘 — 中文站 / 316拉链">
+        <input type="hidden" name="from_name" value="Oshe Website">
+        <input type="hidden" name="redirect_to" value="https://osheaccessories.com/zh/product/316-zipper/?sent=1#enquiry">
+        <input type="hidden" name="category" value="316不锈钢拉链">
       <div class="field-row">
         <div class="field"><label>您的称呼 *</label><input type="text" name="name" required></div>
         <div class="field"><label>手机 / 微信 *</label><input type="text" name="phone" required></div>
       </div>
       <div class="field"><label>需求说明 *</label><textarea name="message" required placeholder="例如：8号开尾，70cm，黑色布带，自动锁拉头，拉片激光打标，5000条。"></textarea></div>
-      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
       <button type="submit" class="btn">提交询价</button>
     </form>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  var ok = document.getElementById('formOk'), er = document.getElementById('formErr');
+  var f = document.querySelector('form[action*="web3forms"]');
+  if (p.get('sent') === '1' && ok && f) { ok.hidden = false; f.insertBefore(ok, f.firstChild); ok.scrollIntoView({block:'center',behavior:'smooth'}); }
+  if (p.get('sent') === '0' && er && f) { er.hidden = false; f.insertBefore(er, f.firstChild); er.scrollIntoView({block:'center',behavior:'smooth'}); }
+})();
+</script>
+
   </div>
 </section>
 

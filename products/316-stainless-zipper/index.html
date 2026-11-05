@@ -22,6 +22,7 @@
   "manufacturer": { "@type": "Organization", "name": "Oshe Accessories Co., Ltd." }
 }
 </script>
+<meta name="web3forms-verify" content="622fb2ca-f8a6-48c6-940f-2927be959635">
 </head>
 <body>
 
@@ -114,17 +115,32 @@
     <span class="eyebrow">Enquiry</span>
     <h2 style="margin-bottom:14px;">Request a quote for 316 zippers</h2>
     <p class="lead" style="margin-bottom:32px;">Tell us the size, length, slider type and quantity. If you have a sample of the current zipper, send a photo and we will match it.</p>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-          onsubmit="event.preventDefault();alert('Demo only — replace YOUR_FORM_ID with your Formspree ID.');">
-      <input type="hidden" name="category" value="316 stainless steel zipper">
+      <div class="form-ok" id="formOk" hidden><span><b>Thank you — your enquiry has been sent.</b> We reply within 12 hours on working days. If it is urgent, email sales@osheaccessories.com.</span></div>
+      <div class="form-err" id="formErr" hidden><span><b>Something went wrong.</b> Please try again, or email us directly at sales@osheaccessories.com.</span></div>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="622fb2ca-f8a6-48c6-940f-2927be959635">
+        <input type="hidden" name="subject" value="Oshe website — 316 stainless steel zipper">
+        <input type="hidden" name="from_name" value="Oshe Website">
+        <input type="hidden" name="redirect_to" value="https://osheaccessories.com/products/316-stainless-zipper/?sent=1#enquiry">
+        <input type="hidden" name="category" value="316 stainless steel zipper">
       <div class="field-row">
         <div class="field"><label>Name *</label><input type="text" name="name" required></div>
         <div class="field"><label>Email *</label><input type="email" name="email" required></div>
       </div>
       <div class="field"><label>Requirements *</label><textarea name="message" required placeholder="e.g. #8 open-end, 70 cm, black tape, auto-lock slider, laser logo, 5,000 pcs."></textarea></div>
-      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
       <button type="submit" class="btn">Send enquiry</button>
     </form>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  var ok = document.getElementById('formOk'), er = document.getElementById('formErr');
+  var f = document.querySelector('form[action*="web3forms"]');
+  if (p.get('sent') === '1' && ok && f) { ok.hidden = false; f.insertBefore(ok, f.firstChild); ok.scrollIntoView({block:'center',behavior:'smooth'}); }
+  if (p.get('sent') === '0' && er && f) { er.hidden = false; f.insertBefore(er, f.firstChild); er.scrollIntoView({block:'center',behavior:'smooth'}); }
+})();
+</script>
+
   </div>
 </section>
 
