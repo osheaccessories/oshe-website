@@ -1,0 +1,63 @@
+/* ============================================================
+   Oshe — 中文版样式补充（在 style.css 之后加载）
+   仅覆盖中文排版相关的细节：字体、字距、行高
+   ============================================================ */
+
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",
+              var(--sans);
+  letter-spacing:0.01em;
+}
+
+/* 中文标题不需要负字距 */
+h1,h2,h3,h4{letter-spacing:0;}
+h1{font-size:clamp(28px,4vw,46px);line-height:1.32;}
+h2{font-size:clamp(22px,2.6vw,32px);line-height:1.4;}
+h3{font-size:clamp(16px,1.4vw,18px);line-height:1.5;}
+
+.lead{line-height:1.85;}
+
+/* 中文段落行高略大 */
+p{line-height:1.85;}
+
+/* eyebrow 中文用小字距 */
+.eyebrow{letter-spacing:0.1em;}
+
+/* 语言切换器 */
+.lang-switch{
+  display:flex;align-items:center;gap:2px;font-size:12.5px;
+  border:1px solid var(--line-dark);padding:2px;margin-right:4px;
+}
+.lang-switch a{
+  padding:5px 9px;color:var(--muted);line-height:1;
+}
+.lang-switch a:hover{color:var(--ink);}
+.lang-switch a.active{background:var(--ink);color:#fff;}
+
+/* 中文版联系块（仿 kcc-zip 结构，按厂区分组） */
+.contact-block{
+  border-top:1px solid var(--line);padding:26px 0;
+}
+.contact-block:first-of-type{border-top:1px solid var(--line-dark);}
+.contact-block h3{
+  font-size:17px;margin-bottom:16px;padding-bottom:10px;
+  border-bottom:1px solid var(--line);
+}
+.contact-block dl{display:grid;grid-template-columns:88px 1fr;gap:9px 0;font-size:14.5px;}
+.contact-block dt{color:var(--muted);font-size:13px;}
+.contact-block dd{color:var(--ink-2);}
+.contact-block dd a{border-bottom:1px solid var(--line-dark);}
+.contact-block dd a:hover{color:var(--accent);border-color:var(--accent);}
+
+.addr-cn{font-size:14px;color:var(--ink-2);line-height:1.75;}
+
+/* 中文表格宽度 */
+.spec-table th{width:34%;}
+
+/* 数据条中文 */
+.stat span{font-size:13px;}
+
+@media (max-width:720px){
+  .lang-switch{display:none;}
+  .contact-block dl{grid-template-columns:76px 1fr;}
+}
