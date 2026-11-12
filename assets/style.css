@@ -350,3 +350,31 @@ textarea{resize:vertical;min-height:110px;}
 .form-err{border-left-color:#8c2f16;background:#fbeeea;}
 .form-err::before{content:"!";color:#8c2f16;}
 .form-ok b{display:block;margin-bottom:2px;}
+
+/* ---------- floating contact: popup panels ---------- */
+.float-item{position:relative;}
+.float-btn{
+  width:48px;height:48px;border:1px solid var(--line-dark);background:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+  border-radius:50%;color:var(--ink);cursor:pointer;transition:background .18s,color .18s;
+  font-family:inherit;
+}
+.float-btn:hover,.float-item.open .float-btn{background:var(--ink);color:#fff;border-color:var(--ink);}
+.float-panel{
+  display:none;position:absolute;right:58px;bottom:0;
+  min-width:238px;max-width:78vw;background:#fff;border:1px solid var(--line-dark);
+  padding:15px 17px;font-size:14px;line-height:1.6;color:var(--ink-2);
+}
+.float-item.open .float-panel{display:block;}
+.float-panel b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-weight:600;}
+.fp-num{display:block;font-size:15px;color:var(--ink);margin-bottom:8px;}
+a.fp-num:hover{color:var(--accent);}
+.fp-wa{display:inline-block;font-size:13px;color:var(--accent);border-bottom:1px solid var(--accent);}
+.fp-copy{
+  display:inline-block;font-size:12px;padding:3px 10px;border:1px solid var(--line-dark);
+  background:#fff;color:var(--ink-2);cursor:pointer;border-radius:2px;
+}
+.fp-copy:hover{border-color:var(--ink);color:var(--ink);}
+/* 表单提示淡出 */
+.form-ok,.form-err{transition:opacity .7s;}
+.form-ok.fade,.form-err.fade{opacity:0;}

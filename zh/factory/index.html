@@ -5,7 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>关于我们 — 东莞长安箱包五金与拉链工厂｜欧奢</title>
 <meta name="description" content="欧奢（东莞）五金有限公司，2014年成立于广东东莞长安，12年箱包五金与316不锈钢拉链生产经验。自有车间，接受第三方验货，欢迎预约看厂。地址：东莞市长安镇厦边社区大板地一路10号8幢。">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://osheaccessories.com/zh/factory/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oshe">
+<meta property="og:title" content="关于我们 — 东莞长安箱包五金与拉链工厂｜欧奢">
+<meta property="og:description" content="欧奢（东莞）五金有限公司，2014年成立于广东东莞长安，12年箱包五金与316不锈钢拉链生产经验。自有车间，接受第三方验货，欢迎预约看厂。地址：东莞市长安镇厦边社区大板地一路10号8幢。">
+<meta property="og:url" content="https://osheaccessories.com/zh/factory/">
+<meta property="og:image" content="https://osheaccessories.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="en" href="https://osheaccessories.com/factory/">
 <link rel="alternate" hreflang="zh-CN" href="https://osheaccessories.com/zh/factory/">
 <link rel="stylesheet" href="/assets/style.css">
@@ -212,9 +225,44 @@
 </footer>
 
 <div class="float">
-  <a href="tel:+8618002758559" title="电话">☎</a>
-  <a href="mailto:sales@osheaccessories.com" title="邮件">✉</a>
+  <div class="float-item">
+    <button class="float-btn" type="button" data-panel="fTel" aria-label="电话">☎</button>
+    <div class="float-panel" id="fTel">
+      <b>电话 / WhatsApp</b>
+      <a class="fp-num" href="tel:+8618002758559">180 0275 8559</a>
+      <!-- WhatsApp 注册后，删掉下面这行注释符号即可启用：
+      <a class="fp-wa" href="https://wa.me/8618002758559">WhatsApp 联系 →</a>
+      -->
+    </div>
+  </div>
+  <div class="float-item">
+    <button class="float-btn" type="button" data-panel="fMail" aria-label="邮箱">✉</button>
+    <div class="float-panel" id="fMail">
+      <b>电子邮箱</b>
+      <a class="fp-num" href="mailto:sales@osheaccessories.com">sales@osheaccessories.com</a>
+      <button class="fp-copy" type="button" data-copy="sales@osheaccessories.com">复制</button>
+    </div>
+  </div>
 </div>
+<script>
+(function(){
+  var bar=document.querySelector('.float'); if(!bar) return;
+  bar.addEventListener('click',function(e){
+    var btn=e.target.closest('.float-btn'), copy=e.target.closest('.fp-copy');
+    if(copy){
+      var t=copy.getAttribute('data-copy'), done=function(){copy.textContent='已复制 ✓';setTimeout(function(){copy.textContent='复制';},1600);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done);}else{var i=document.createElement('input');i.value=t;document.body.appendChild(i);i.select();document.execCommand('copy');i.remove();done();}
+      return;
+    }
+    if(!btn) return;
+    var item=btn.parentElement, was=item.classList.contains('open');
+    bar.querySelectorAll('.float-item.open').forEach(function(x){x.classList.remove('open');});
+    if(!was) item.classList.add('open');
+  });
+  document.addEventListener('click',function(e){ if(!bar.contains(e.target)) bar.querySelectorAll('.float-item.open').forEach(function(x){x.classList.remove('open');}); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') bar.querySelectorAll('.float-item.open').forEach(function(x){x.classList.remove('open');}); });
+})();
+</script>
 
 </body>
 </html>

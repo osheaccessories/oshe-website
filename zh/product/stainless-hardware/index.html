@@ -5,7 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>不锈钢箱包五金厂家 — 304/316针扣、D型环、勾扣｜欧奢</title>
 <meta name="description" content="304/316不锈钢箱包五金生产厂家：针扣、D型环、勾扣、五金片。无镀层可磨损，耐腐蚀性在金属本体。起订100件，可混色混码，现货样2-3天，大货30天。">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://osheaccessories.com/zh/product/stainless-hardware/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oshe">
+<meta property="og:title" content="不锈钢箱包五金厂家 — 304/316针扣、D型环、勾扣｜欧奢">
+<meta property="og:description" content="304/316不锈钢箱包五金生产厂家：针扣、D型环、勾扣、五金片。无镀层可磨损，耐腐蚀性在金属本体。起订100件，可混色混码，现货样2-3天，大货30天。">
+<meta property="og:url" content="https://osheaccessories.com/zh/product/stainless-hardware/">
+<meta property="og:image" content="https://osheaccessories.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="en" href="https://osheaccessories.com/products/bag-hardware-stainless/">
 <link rel="alternate" hreflang="zh-CN" href="https://osheaccessories.com/zh/product/stainless-hardware/">
 <link rel="stylesheet" href="/assets/style.css">
@@ -124,8 +137,13 @@
   var p = new URLSearchParams(location.search);
   var ok = document.getElementById('formOk'), er = document.getElementById('formErr');
   var f = document.querySelector('form[action*="web3forms"]');
-  if (p.get('sent') === '1' && ok && f) { ok.hidden = false; f.insertBefore(ok, f.firstChild); ok.scrollIntoView({block:'center',behavior:'smooth'}); }
-  if (p.get('sent') === '0' && er && f) { er.hidden = false; f.insertBefore(er, f.firstChild); er.scrollIntoView({block:'center',behavior:'smooth'}); }
+  var box = (p.get('sent') === '1' && ok) ? ok : (p.get('sent') === '0' && er) ? er : null;
+  if (box && f) {
+    box.hidden = false; f.insertBefore(box, f.firstChild);
+    box.scrollIntoView({block:'center',behavior:'smooth'});
+    setTimeout(function(){ box.classList.add('fade'); setTimeout(function(){ box.hidden = true; }, 700); }, 6000);
+    history.replaceState(null, '', location.pathname + location.hash.replace(/^#contact$|^#enquiry$/,'') );
+  }
 })();
 </script>
 
@@ -172,9 +190,44 @@
 </footer>
 
 <div class="float">
-  <a href="tel:+8618002758559" title="电话">☎</a>
-  <a href="mailto:sales@osheaccessories.com" title="邮件">✉</a>
+  <div class="float-item">
+    <button class="float-btn" type="button" data-panel="fTel" aria-label="电话">☎</button>
+    <div class="float-panel" id="fTel">
+      <b>电话 / WhatsApp</b>
+      <a class="fp-num" href="tel:+8618002758559">180 0275 8559</a>
+      <!-- WhatsApp 注册后，删掉下面这行注释符号即可启用：
+      <a class="fp-wa" href="https://wa.me/8618002758559">WhatsApp 联系 →</a>
+      -->
+    </div>
+  </div>
+  <div class="float-item">
+    <button class="float-btn" type="button" data-panel="fMail" aria-label="邮箱">✉</button>
+    <div class="float-panel" id="fMail">
+      <b>电子邮箱</b>
+      <a class="fp-num" href="mailto:sales@osheaccessories.com">sales@osheaccessories.com</a>
+      <button class="fp-copy" type="button" data-copy="sales@osheaccessories.com">复制</button>
+    </div>
+  </div>
 </div>
+<script>
+(function(){
+  var bar=document.querySelector('.float'); if(!bar) return;
+  bar.addEventListener('click',function(e){
+    var btn=e.target.closest('.float-btn'), copy=e.target.closest('.fp-copy');
+    if(copy){
+      var t=copy.getAttribute('data-copy'), done=function(){copy.textContent='已复制 ✓';setTimeout(function(){copy.textContent='复制';},1600);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done);}else{var i=document.createElement('input');i.value=t;document.body.appendChild(i);i.select();document.execCommand('copy');i.remove();done();}
+      return;
+    }
+    if(!btn) return;
+    var item=btn.parentElement, was=item.classList.contains('open');
+    bar.querySelectorAll('.float-item.open').forEach(function(x){x.classList.remove('open');});
+    if(!was) item.classList.add('open');
+  });
+  document.addEventListener('click',function(e){ if(!bar.contains(e.target)) bar.querySelectorAll('.float-item.open').forEach(function(x){x.classList.remove('open');}); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') bar.querySelectorAll('.float-item.open').forEach(function(x){x.classList.remove('open');}); });
+})();
+</script>
 
 </body>
 </html>
