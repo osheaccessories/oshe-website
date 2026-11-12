@@ -42,10 +42,11 @@
 .float-item{position:relative;}
 .float-btn{width:48px;height:48px;border:1px solid #c9ccd1;background:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;border-radius:50%;color:#16181c;cursor:pointer;transition:background .18s,color .18s;font-family:inherit;}
 .float-btn:hover,.float-item.open .float-btn{background:#16181c;color:#fff;border-color:#16181c;}
-.float-panel{display:none;position:absolute;right:58px;bottom:0;min-width:238px;max-width:78vw;background:#fff;border:1px solid #c9ccd1;padding:15px 17px;font-size:14px;line-height:1.6;color:#3a3f47;z-index:210;}
+.float-panel{display:none;position:absolute;right:58px;bottom:0;min-width:210px;max-width:78vw;background:#fff;border:1px solid #c9ccd1;padding:15px 17px;font-size:14px;line-height:1.6;color:#3a3f47;z-index:210;}
 .float-item.open .float-panel{display:block;}
-.float-panel b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6e747d;margin-bottom:6px;font-weight:600;}
-.fp-num{display:block;font-size:15px;color:#16181c;margin-bottom:8px;}
+.float-panel b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6e747d;margin-bottom:5px;font-weight:600;}
+.float-panel a{width:auto;height:auto;border:0;border-radius:0;background:transparent;padding:0;}
+.fp-num{display:block;font-size:13.5px;color:#16181c;margin-bottom:8px;}
 a.fp-num:hover{color:#b3502a;}
 .fp-wa{display:inline-block;font-size:13px;color:#b3502a;border-bottom:1px solid #b3502a;}
 .fp-copy{display:inline-block;font-size:12px;padding:3px 10px;border:1px solid #c9ccd1;background:#fff;color:#3a3f47;cursor:pointer;border-radius:2px;}
@@ -231,7 +232,7 @@ a.fp-num:hover{color:#b3502a;}
     <button class="float-btn" type="button" data-panel="fTel" aria-label="电话">☎</button>
     <div class="float-panel" id="fTel">
       <b>电话 / WhatsApp</b>
-      <a class="fp-num" href="tel:+8618002758559">180 0275 8559</a>
+      <span class="fp-num">180 0275 8559</span>
       <!-- WhatsApp 注册后，删掉下面这行注释符号即可启用：
       <a class="fp-wa" href="https://wa.me/8618002758559">WhatsApp 联系 →</a>
       -->
@@ -241,8 +242,7 @@ a.fp-num:hover{color:#b3502a;}
     <button class="float-btn" type="button" data-panel="fMail" aria-label="邮箱">✉</button>
     <div class="float-panel" id="fMail">
       <b>电子邮箱</b>
-      <a class="fp-num" href="mailto:sales@osheaccessories.com">sales@osheaccessories.com</a>
-      <button class="fp-copy" type="button" data-copy="sales@osheaccessories.com">复制</button>
+      <span class="fp-num">sales@osheaccessories.com</span>
     </div>
   </div>
 </div>
@@ -250,12 +250,7 @@ a.fp-num:hover{color:#b3502a;}
 (function(){
   var bar=document.querySelector('.float'); if(!bar) return;
   bar.addEventListener('click',function(e){
-    var btn=e.target.closest('.float-btn'), copy=e.target.closest('.fp-copy');
-    if(copy){
-      var t=copy.getAttribute('data-copy'), done=function(){copy.textContent='已复制 ✓';setTimeout(function(){copy.textContent='复制';},1600);};
-      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done);}else{var i=document.createElement('input');i.value=t;document.body.appendChild(i);i.select();document.execCommand('copy');i.remove();done();}
-      return;
-    }
+    var btn=e.target.closest('.float-btn');
     if(!btn) return;
     var item=btn.parentElement, was=item.classList.contains('open');
     bar.querySelectorAll('.float-item.open').forEach(function(x){x.classList.remove('open');});
