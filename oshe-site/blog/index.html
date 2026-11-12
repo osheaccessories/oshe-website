@@ -24,6 +24,29 @@
 <link rel="alternate" hreflang="x-default" href="https://osheaccessories.com/blog/">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="stylesheet" href="/assets/zh.css">
+<style>
+/* critical: float panels + form feedback (self-contained) */
+[hidden]{display:none!important;}
+.float{position:fixed;right:18px;bottom:20px;display:flex;flex-direction:column;gap:9px;z-index:200;}
+.float-item{position:relative;}
+.float-btn{width:48px;height:48px;border:1px solid #c9ccd1;background:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;border-radius:50%;color:#16181c;cursor:pointer;transition:background .18s,color .18s;font-family:inherit;}
+.float-btn:hover,.float-item.open .float-btn{background:#16181c;color:#fff;border-color:#16181c;}
+.float-panel{display:none;position:absolute;right:58px;bottom:0;min-width:238px;max-width:78vw;background:#fff;border:1px solid #c9ccd1;padding:15px 17px;font-size:14px;line-height:1.6;color:#3a3f47;z-index:210;}
+.float-item.open .float-panel{display:block;}
+.float-panel b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6e747d;margin-bottom:6px;font-weight:600;}
+.fp-num{display:block;font-size:15px;color:#16181c;margin-bottom:8px;}
+a.fp-num:hover{color:#b3502a;}
+.fp-wa{display:inline-block;font-size:13px;color:#b3502a;border-bottom:1px solid #b3502a;}
+.fp-copy{display:inline-block;font-size:12px;padding:3px 10px;border:1px solid #c9ccd1;background:#fff;color:#3a3f47;cursor:pointer;border-radius:2px;}
+.fp-copy:hover{border-color:#16181c;color:#16181c;}
+.form-ok,.form-err{display:flex;gap:10px;align-items:flex-start;padding:16px 18px;margin-bottom:24px;font-size:14.5px;line-height:1.65;border-left:3px solid #b3502a;background:#f7ede8;transition:opacity .7s;}
+.form-ok::before,.form-err::before{content:"\2713";font-weight:700;color:#b3502a;line-height:1.6;}
+.form-err{border-left-color:#8c2f16;background:#fbeeea;}
+.form-err::before{content:"!";color:#8c2f16;}
+.form-ok b{display:block;margin-bottom:2px;}
+.form-ok.fade,.form-err.fade{opacity:0;}
+.hp{position:absolute;left:-9999px;}
+</style>
 </head>
 <body>
 
