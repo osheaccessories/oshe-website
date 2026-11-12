@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Technical Notes for Bag Hardware &amp; Zipper Buyers | Oshe</title>
+<meta name="description" content="Practical notes on stainless steel grades, salt-spray testing, zipper sizing and hardware sourcing — written for buyers and product developers, not for search engines.">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://osheaccessories.com/blog/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oshe">
+<meta property="og:title" content="Blog — Technical Notes for Bag Hardware &amp; Zipper Buyers | Oshe">
+<meta property="og:description" content="Practical notes on stainless steel grades, salt-spray testing, zipper sizing and hardware sourcing — written for buyers and product developers, not for search engines.">
+<meta property="og:url" content="https://osheaccessories.com/blog/">
+<meta property="og:image" content="https://osheaccessories.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://osheaccessories.com/blog/">
+<link rel="alternate" hreflang="zh-CN" href="https://osheaccessories.com/zh/blog/">
+<link rel="alternate" hreflang="x-default" href="https://osheaccessories.com/blog/">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/zh.css">
+<style>
+/* critical: float panels + form feedback (self-contained) */
+[hidden]{display:none!important;}
+.float{position:fixed;right:18px;bottom:20px;display:flex;flex-direction:column;gap:9px;z-index:200;}
+.float-item{position:relative;}
+.float-btn{width:48px;height:48px;border:1px solid #c9ccd1;background:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;border-radius:50%;color:#16181c;cursor:pointer;transition:background .18s,color .18s;font-family:inherit;}
+.float-btn:hover,.float-item.open .float-btn{background:#16181c;color:#fff;border-color:#16181c;}
+.float-panel{display:none;position:absolute;right:58px;bottom:0;min-width:210px;max-width:78vw;background:#fff;border:1px solid #c9ccd1;padding:15px 17px;font-size:14px;line-height:1.6;color:#3a3f47;z-index:210;}
+.float-item.open .float-panel{display:block;}
+.float-panel b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6e747d;margin-bottom:5px;font-weight:600;}
+.float-panel a{width:auto;height:auto;border:0;border-radius:0;background:transparent;padding:0;}
+.fp-num{display:block;font-size:13.5px;color:#16181c;margin-bottom:8px;}
+a.fp-num:hover{color:#b3502a;}
+.fp-wa{display:inline-block;font-size:13px;color:#b3502a;border-bottom:1px solid #b3502a;}
+.fp-copy{display:inline-block;font-size:12px;padding:3px 10px;border:1px solid #c9ccd1;background:#fff;color:#3a3f47;cursor:pointer;border-radius:2px;}
+.fp-copy:hover{border-color:#16181c;color:#16181c;}
+.form-ok,.form-err{display:flex;gap:10px;align-items:flex-start;padding:16px 18px;margin-bottom:24px;font-size:14.5px;line-height:1.65;border-left:3px solid #b3502a;background:#f7ede8;transition:opacity .7s;}
+.form-ok::before,.form-err::before{content:"\2713";font-weight:700;color:#b3502a;line-height:1.6;}
+.form-err{border-left-color:#8c2f16;background:#fbeeea;}
+.form-err::before{content:"!";color:#8c2f16;}
+.form-ok b{display:block;margin-bottom:2px;}
+.form-ok.fade,.form-err.fade{opacity:0;}
+.hp{position:absolute;left:-9999px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>Manufacturer · Dongguan, China · Export to 30+ countries</span>
+    <span><a href="mailto:sales@osheaccessories.com">sales@osheaccessories.com</a></span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand">Oshe<em>.</em><small>Accessories</small></a>
+    <nav class="nav-links">
+      <a href="/#range">Range</a>
+      <a href="/#factory">Factory</a>
+      <a href="/#process">How we work</a>
+      <a href="/factory/">The factory</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch"><a href="/zh/blog/" hreflang="zh-CN">中文</a><a href="#" class="active">EN</a></div>
+      <a href="/#contact" class="btn btn--sm">Request a quote</a>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="crumb"><a href="/">Home</a> &nbsp;/&nbsp; Blog</div>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Notes from the workshop</span>
+    <h1>Technical notes for buyers</h1>
+    <p class="lead">Short, practical writing about materials, testing and specification. Written by the people who make the parts, for the people who have to justify them to a product team.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="post-list">
+      <a class="post" href="/blog/">
+        <span class="post-tag">Materials</span>
+        <div>
+          <h3>316 vs 304 stainless steel: which one belongs on your bag hardware</h3>
+          <p>Both resist rust. Only one survives salt water and chlorine. How to tell the difference and when the upgrade is worth the cost.</p>
+        </div>
+        <span class="post-date">Coming soon</span>
+      </a>
+      <a class="post" href="/blog/">
+        <span class="post-tag">Testing</span>
+        <div>
+          <h3>What a 500-hour salt-spray test actually tells you</h3>
+          <p>ASTM B117 explained without the jargon, and what the numbers mean for a product that lives outdoors.</p>
+        </div>
+        <span class="post-date">Coming soon</span>
+      </a>
+      <a class="post" href="/blog/">
+        <span class="post-tag">Specification</span>
+        <div>
+          <h3>Zipper sizes explained: #3, #5, #8 and #10</h3>
+          <p>What the number measures, which size suits a handbag versus a boat cover, and how to specify length correctly.</p>
+        </div>
+        <span class="post-date">Coming soon</span>
+      </a>
+      <a class="post" href="/blog/">
+        <span class="post-tag">Sourcing</span>
+        <div>
+          <h3>Brass versus zinc alloy: the real cost difference</h3>
+          <p>Why brass hardware costs more up front and often costs less over the life of a bag.</p>
+        </div>
+        <span class="post-date">Coming soon</span>
+      </a>
+      <a class="post" href="/blog/">
+        <span class="post-tag">Manufacturing</span>
+        <div>
+          <h3>Why plating fails at the contact points first</h3>
+          <p>Anatomy of a common hardware complaint, and how to write a specification that prevents it.</p>
+        </div>
+        <span class="post-date">Coming soon</span>
+      </a>
+      <a class="post" href="/blog/">
+        <span class="post-tag">Purchasing</span>
+        <div>
+          <h3>How to write a hardware RFQ that gets an accurate price</h3>
+          <p>The five details that decide whether a quote is comparable between suppliers.</p>
+        </div>
+        <span class="post-date">Coming soon</span>
+      </a>
+    </div>
+
+    <p class="small muted" style="margin-top:32px;">Articles are being written. If there is a specific question you need answered, <a href="/#contact" style="border-bottom:1px solid var(--line-dark);">send it to us</a> — the answer usually becomes the next post.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">Oshe<em>.</em></div>
+        <p>Manufacturer of brass and stainless steel bag hardware, and 316 stainless steel zippers. Dongguan, Guangdong, China.</p>
+      </div>
+      <div>
+        <h4>Range</h4>
+        <ul>
+          <li><a href="/products/bag-hardware-brass/">Bag hardware — brass</a></li>
+          <li><a href="/products/bag-hardware-stainless/">Bag hardware — stainless</a></li>
+          <li><a href="/products/316-stainless-zipper/">316 stainless zippers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/factory/">The factory</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:sales@osheaccessories.com">sales@osheaccessories.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Oshe Accessories Co., Ltd.</span>
+      <span>欧奢（东莞）五金有限公司 · All rights reserved</span>
+    </div>
+  </div>
+</footer>
+
+<div class="float">
+  <div class="float-item">
+    <button class="float-btn" type="button" data-panel="fTel" aria-label="Phone">☎</button>
+    <div class="float-panel" id="fTel">
+      <b>Phone / WhatsApp</b>
+      <span class="fp-num">+86 180 0275 8559</span>
+      <!-- WhatsApp 注册后，删掉下面这行注释符号即可启用：
+      <a class="fp-wa" href="https://wa.me/8618002758559">Chat on WhatsApp →</a>
+      -->
+    </div>
+  </div>
+  <div class="float-item">
+    <button class="float-btn" type="button" data-panel="fMail" aria-label="Email">✉</button>
+    <div class="float-panel" id="fMail">
+      <b>Email</b>
+      <span class="fp-num">sales@osheaccessories.com</span>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var bar=document.querySelector('.float'); if(!bar) return;
+  bar.addEventListener('click',function(e){
+    var btn=e.target.closest('.float-btn');
+    if(!btn) return;
+    var item=btn.parentElement, was=item.classList.contains('open');
+    bar.querySelectorAll('.float-item.open').forEach(function(x){x.classList.remove('open');});
+    clearTimeout(bar._t);
+    if(!was){
+      item.classList.add('open');
+      bar._t=setTimeout(function(){ bar.querySelectorAll('.float-item.open').forEach(function(x){x.classList.remove('open');}); },7000);
+    }
+  });
+  document.addEventListener('click',function(e){ if(!bar.contains(e.target)) bar.querySelectorAll('.float-item.open').forEach(function(x){x.classList.remove('open');}); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') bar.querySelectorAll('.float-item.open').forEach(function(x){x.classList.remove('open');}); });
+})();
+</script>
+
+</body>
+</html>
