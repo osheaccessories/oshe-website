@@ -378,3 +378,9 @@ a.fp-num:hover{color:var(--accent);}
 /* 表单提示淡出 */
 .form-ok,.form-err{transition:opacity .7s;}
 .form-ok.fade,.form-err.fade{opacity:0;}
+
+/* 面板内链接不受外层圆形按钮样式影响 */
+.float-panel a{width:auto;height:auto;border:0;border-radius:0;background:transparent;padding:0;}
+.float-panel .fp-num{font-size:13.5px;}
+.float-panel b{font-size:11px;}
+.float-panel{min-width:210px;}
