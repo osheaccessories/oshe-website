@@ -14,3 +14,6 @@
 
 # 可选的 www / 裸域统一（推荐，避免重复内容）
 # https://www.osheaccessories.com/*  https://osheaccessories.com/:splat  301!
+
+# 仓库误传的 oshe-site/ 子文件夹 → 301 回根目录（避免重复内容影响 SEO）
+/oshe-site/*  https://osheaccessories.com/:splat  301!
