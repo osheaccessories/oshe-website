@@ -82,4 +82,19 @@
     <changefreq>weekly</changefreq><priority>0.8</priority>
   </url>
 
+
+  <url>
+    <loc>https://osheaccessories.com/samples/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://osheaccessories.com/samples/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://osheaccessories.com/zh/samples/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://osheaccessories.com/samples/"/>
+    <changefreq>weekly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://osheaccessories.com/zh/samples/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://osheaccessories.com/samples/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://osheaccessories.com/zh/samples/"/>
+    <changefreq>weekly</changefreq><priority>0.8</priority>
+  </url>
+
 </urlset>
